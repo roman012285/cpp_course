@@ -1,0 +1,3 @@
+# Ignore build directory insode exercise sub folders
+
+exercises/*/build/

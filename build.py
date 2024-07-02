@@ -10,8 +10,8 @@ import argparse
 def build_directory(exercise_name):
     base_dir = 'exercises'
     directory = os.path.join(base_dir, exercise_name)
-    header_dir = os.path.join(directory, 'Header')
-    source_dir = os.path.join(directory, 'Source')
+    header_dir = os.path.join(directory, 'header')
+    source_dir = os.path.join(directory, 'source')
     
     # Check if the specified directories exist
     if not os.path.isdir(header_dir) or not os.path.isdir(source_dir):

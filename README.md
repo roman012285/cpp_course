@@ -4,12 +4,17 @@
 
 ## Folder organization
 - Each exercise is in a separate folder. It has `Source` and `Header` files located at specific locations in each exercise.
-- To run the code please type
+- To build the code please type
 ```
 ./build.py -dir exercise<num>
 ```
+
+- To run the code please type
+```
+./build.py -dir exercise<num> -run
+```
 That script will generate `build` folder including executable file and object files.
 
-##
+## assignments
 - assignment1 - Design of data structures
  

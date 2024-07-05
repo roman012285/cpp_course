@@ -16,5 +16,5 @@
 That script will generate `build` folder including executable file and object files.
 
 ## assignments
-- assignment1 - Design of data structures
+- assignment1 - Linked list implementation
  

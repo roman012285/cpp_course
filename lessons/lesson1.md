@@ -97,7 +97,9 @@ int main(){
     stud1.grades[2] = 70;
     stud1.grades[3] = 60;
 
-    
+    std1.print();
+    std::cout << "The average grade is: << stud1.getAverage << std::endl;
+
     Student stud2;
     // second student info
     stud2.firstName = "John";
@@ -108,6 +110,8 @@ int main(){
     stud2.grades[2] = 60;
     stud2.grades[3] = 50;
 
+    std2.print();
+    std::cout << "The average grade is: << stud2.getAverage << std::endl;
     return 0;
 }
 ```

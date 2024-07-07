@@ -116,3 +116,11 @@ int main(){
 }
 ```
  
+
+ ## Coding style
+ - Classes starts with big letter
+ for example: `Class Student`
+ - Instances will start with small letter 
+ for example: `Student stu`
+ - Methods and fields (also function names and variables) will start with small letter
+ for example: `getGrade`, `calcAverageMark`

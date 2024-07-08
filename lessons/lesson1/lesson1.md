@@ -116,7 +116,103 @@ int main(){
 }
 ```
  
+ ## `this` pointer
+ - `this` is a pointer that points to the object that called the method 
+ - The function we defined previously as `void print() const;` interpreted by the compiler and equivalent to `void print(Student* this) const;`
+ - In the main, the compiler transforms `stud1.print()` to `Student::print(&stud1)`
 
+ ## Encapsulation
+ - We decide which of the fields or methods we want to hide from the user.
+ - `public` - possible to access them from any place
+ - `private` - possible to acces them only from `namespace`.
+ - Impossible to access them outside the Class. 
+ - **IMPORTANT** : fields will always be private and, methods will always be public
+ 
+ ## Getters and Setters
+-  Get is used to get the field value outside the Class (remember that fields are private)
+- Set will give us the ability to change the fields.
+
+```
+#include <string>
+#define NUM_OF_GRADES 4
+ 
+class Student 
+{
+public:
+    // methods
+    double getAverage() const;
+    void print() const;
+ 
+private:
+    // fields
+    int _id;
+    std::string _firstName;
+    std::string _lastName;
+    unsigned int _grades[NUM_OF_GRADES];
+ 
+    //methods
+    std::string getGradeString(const int gradeIndex) const;	// helper method
+ 
+};
+
+```
+- note that helping methods can also be defined as private
+
+- Getter declaration maybe like:  
+```
+unsigned int* getGrades() const; // we don't want to change the value than we add const
+```
+- Setter declaration maybe like:
+```
+// note that we do not add const since it change fields value
+void setId(const int newId);
+void setFirstName(const std::string newFirstName);
+void setLastName(const std::string newLastName);
+void setHeight(const int newHeight);
+void setGrade(const int grade_idx, const unsigned int new_grade);
+```
+
+- Setter implementation maybe like
+```
+void Student::setGrade(const int grade_idx, const unsigned int new_grade)
+{
+    if (grade_idx >= NUM_OF_GRADES || grade_idx < 0)
+    {
+        std::cerr << "grade index must be between 0 to 3" << endl;
+        _exit(1)
+    }
+    if (new_grade < 0 || new_grade > 100)
+    {
+        // writes to cerr - a stream dedicated to error audit
+        std::cerr << "grade must be between 0 to 100" << endl;
+    }
+    else
+    {
+        this->_grades[grade_idx] = new_grade;
+    }
+}
+
+```
+- After define the setters we can only change the field thought the setter
+`stud1.id = 10;` - ERROR
+`stud1.setGrade(0, 78);` - FINE
+
+## Complex definitions of Classes
+```
+#include "Student.h"
+ 
+#define MAX_STUDENTS_IN_CLASS 10
+ 
+class ClassRoom
+{
+public: 
+    void init();
+    void printStudents() const;
+    void addStudent(const Student stud);
+private:
+    Student _studentsInClass[MAX_STUDENTS_IN_CLASS]; // array where each element is from student object
+};
+```
  ## Coding style
  - Classes starts with big letter
  for example: `Class Student`

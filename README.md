@@ -6,12 +6,12 @@
 - Each exercise is in a separate folder. It has `Source` and `Header` files located at specific locations in each exercise.
 - To build the code please type
 ```
-./build.py -dir exercise<num>
+./build.py -dir exercise<num> -test <file_name__main>
 ```
 
 - To run the code please type
 ```
-./build.py -dir exercise<num> -run
+./build.py -dir exercise<num> -run -test <file_name__main>
 ```
 That script will generate `build` folder including executable file and object files.
 

@@ -213,6 +213,57 @@ private:
     Student _studentsInClass[MAX_STUDENTS_IN_CLASS]; // array where each element is from student object
 };
 ```
+
+### Bonus information
+### Reference operator `&`
+
+- A reference is an alias for another variable, which means it essentially acts as another name for that variable. Here’s a detailed explanation of references using the `&` operator:
+```
+int x = 10;
+int &ref = x;
+
+ref = 20;
+std::cout << x << std::endl; // The value of x is 20
+```
+
+ - References are often used to pass arguments to functions. This is particularly useful for large objects to avoid copying them
+ ```
+ void incrementNum(int& num){
+
+    num++;
+ }
+
+ int main() {
+    int a = 5;
+    incrementNum(a);
+    std::cout << a;  // a = 6
+
+    return 0;
+ }
+ ```
+- Functions can return references to allow modifications to the returned variable.
+```
+int& getReference(int &num) {
+    return num;
+}
+
+int main() {
+    int b = 10;
+    int &refToB = getReference(b);
+    refToB = 15;  // Changes the value of b to 15
+    std::cout << b;  // Outputs: 15
+    return 0;
+}
+```
+
+### Notes and comparison to pointers
+- References must always refer to a valid object and cannot be null. 
+- Pointers can be null.   
+
+- References cannot be reassigned to refer to a different object after they are initialized.
+- Pointers can be reassigned to point to different objects.   
+
+
  ## Coding style
  - Classes starts with big letter
  for example: `Class Student`

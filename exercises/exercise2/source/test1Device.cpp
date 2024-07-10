@@ -9,7 +9,6 @@
 
  #define GREEN 2
  #define DARK_RED 4
- #define PURPLE 5
  #define YELLOW 6
  #define LIGHT_BLUE 9
  #define LIGHT_GREEN 10

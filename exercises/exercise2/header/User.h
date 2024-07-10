@@ -8,7 +8,7 @@ class User {
 public:
     void init(unsigned int id, std::string username, unsigned int age);
     void clear();
-    bool checkIfDeviceAreOn() const;
+    bool checkIfDevicesAreOn() const;
 
     // getters
     unsigned int getID() const;

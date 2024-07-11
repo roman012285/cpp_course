@@ -6,7 +6,7 @@ using std::endl;
 
 void Page::init(){
    this->clearPage();
-   this->_status.clear();
+   this->_status = "";
 
 }
 
@@ -15,7 +15,7 @@ std::string Page::getStatus() const{
 }
 
 void Page::clearPage() {
-    this->_posts.clear(); // makes the string to be empty
+    this->_posts = ""; 
 }
 
 
@@ -24,9 +24,11 @@ void Page::setStatus(std::string status) {
 }
 
 void Page::addLineToPosts(std::string new_line){
+    
     this->_posts = this->_posts + new_line + "\n";
+
 }
 
 std::string Page::getPosts() const{
-    cout << _posts << endl;
+    return this->_posts;
 }

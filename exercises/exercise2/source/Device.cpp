@@ -33,5 +33,6 @@ void Device::deactivate() {
 void Device::init (unsigned int id, DeviceType type, std::string os) {
     this->_id = id;
     this->_type = type;
+    this->_activeState = true;
     this->_os = os;
 }

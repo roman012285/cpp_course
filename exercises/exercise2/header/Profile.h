@@ -10,15 +10,16 @@ public:
     void clear();
     void addPostToProfilePage(std::string post);
     void addFriend(User friend_to_add);
+    void changeAllWordsInStatus(std::string word);
+    void changeWordInStatus(std::string word_to_replace, std::string new_word);
 
     //getters
     User getOwner() const;
     std::string getPage() const;
     std::string getFriends() const;
     std::string getFriendsWithSameNameLength() const;
-
     //setters
-    User setStatus(std::string new_string);
+    void setStatus(std::string new_string);
 
 
 private:

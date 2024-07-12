@@ -20,5 +20,6 @@ That script will generate `build` folder including executable file and object fi
 
 ## assignments
 - assignment1 - Linked list implementation
-- assignment2 - Design a basic social network
+- assignment2 - Design a basic social network.
+for test run  `./build.py -dir exercise2 -test Tester -run`
  

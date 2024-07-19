@@ -16,7 +16,18 @@
 That script will generate `build` folder including executable file and object files.
 
 ## Lessons
-- Lesson1 - Intro to OOP in C++
+- **Lesson1** - Intro to OOP in C++
+- **Lesson2** - Introduction to OOP in C++ continue
+    * Constructors
+    * Destructors
+    * Default constructor
+    * Copy constructor
+    * Deep copy VS Shallow copy
+    * Initialization line
+    * Function overloading
+    * Constructors overloading
+    * Operator overloading
+
 
 ## assignments
 - assignment1 - Linked list implementation

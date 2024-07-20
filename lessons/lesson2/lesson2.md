@@ -104,9 +104,15 @@ int main()
 - We can use `==` or `>` and so on between objects. We have to define what they do
 ```
 _ **Important** each operator  must have a special signature which we cant decide. We have to look in google to find it
+
 bool Student::operator==(const Student& other) const
 {
 	return this->_id == other._id;
 }
 ```
 - For more operator refer to `/finalFiles/Student.cpp`
+
+## The big3 rule
+- if one the following is used: copy constructor or destructor or assignment operator than we should implement all of them explicitly and not using the default one that given
+when instantiate an object.
+- Please remember than the default copy constructor performs shallow copy only.

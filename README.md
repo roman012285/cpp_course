@@ -26,7 +26,8 @@ That script will generate `build` folder including executable file and object fi
     * Initialization line
     * Function overloading
     * Constructors overloading
-    * Operator overloading
+    * Operator overloading 
+- **Lesson3** - Inheritance, Compositions and Multiple Inheritance
 
 
 ## assignments

@@ -256,3 +256,78 @@ int main() {
 - The main issue in your example is the diamond problem in C++, which occurs when two classes (Donkey and Horse) inherit from the same superclass (Animal), and then another class (Mule) inherits from both of these classes. This results in the Mule class inheriting the Animal class's members (in this case, the kick method) twice, once via each of its parent classes (Donkey and Horse), leading to ambiguity:
 
 - Ambiguity in Member Access: When you try to call m.kick(), the compiler cannot determine whether to call Donkey's kick or Horse's kick because both paths provide a kick function inherited from Animal.
+
+### Static functions
+- can be called without the need to create an object from the class
+ ```
+ class MyMath
+ {
+   private:
+   int _num;
+   
+   public:
+   MyMath(int num);
+   static int add(int a, int b);
+ };
+ ```
+
+ ```
+ int MyMath::add(int a, int b)
+ {
+     return a + b
+ }
+ ```
+ 
+ ```
+ void main()
+ {
+     cout << “Result of 5 + 2 = ” << MyMath::add(5,2) << endl;
+     
+     MyMath myMathObject(10);
+     cout << “Result of 5 + 2 = ” << myMathObject.add(5,2) << endl;
+ }
+ 
+```
+
+### Static variables
+- In the implementation file we have to initialize the static variable
+
+- Declarations: 
+```
+class MyMath
+{
+   private:
+   int _num;
+   static int _x
+
+   public:
+   MyMath(int num);
+   static int add(int a, int b);
+};
+```
+
+```
+class MyMath
+{
+   private:
+   int _num;
+   static int _x
+
+   public:
+   MyMath(int num);
+   static int add(int a, int b);
+};
+```
+
+```
+int MyMath::_x = 0
+MyMath::MyMath(int num) : _num(num)
+{    _x++;
+    std::cout << “_x = ” << _x << std::endl
+}
+int MyMath::add(int a, int b)
+{
+    return a + b + _x
+}
+```
+

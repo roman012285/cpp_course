@@ -45,7 +45,10 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "linkedlist.h": "c",
-        "cstdarg": "cpp"
+        "cstdarg": "cpp",
+        "sstream": "cpp",
+        "cstring": "cpp",
+        "fstream": "cpp"
     },
     "cSpell.words": [
         "Succesfully",

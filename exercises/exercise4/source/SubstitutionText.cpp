@@ -8,8 +8,8 @@ using std::cout;
 using std::endl;
 
 SubstitutionText::SubstitutionText(string text, string dictionaryFileName) 
-    :PlainText(text) {
-     _text = encrypt(_text, "dictionary");
+    :PlainText(text), _dictionaryFileName(dictionaryFileName) {
+     _text = encrypt(_text, dictionaryFileName);
 };
 
 
@@ -19,22 +19,22 @@ SubstitutionText::~SubstitutionText() {
 
 string SubstitutionText::encrypt(string text, string dictionaryFileName){
     std::ifstream myFile;
-    string fName = dictionaryFileName + ".csv";
-    myFile.open(fName);
+    myFile.open("exercises/exercise4/source/" + dictionaryFileName);
 
-    if(!myFile){
-        cout << "ERROR" << endl;
+    if(!myFile.is_open()){
+        cout << "error opening " << dictionaryFileName << endl;
         exit(1);
     }
     string line;
     for(int i=0; i<text.length(); i++){
         if(text[i] >='a' && text[i] <= 'z') {
             while(std::getline(myFile, line)){
-                if(line[0] == text[i]){
+                if(line.length() >= 3 && line[1] == ',' && line[0] == text[i]){
                    text[i] = line[2]; 
-                   continue;
+                   break;
                 }
             }//while
+            myFile.seekg(0, std::ios::beg); // Move the pointer to the start
         }//for
         // do nothing
     }
@@ -44,22 +44,22 @@ string SubstitutionText::encrypt(string text, string dictionaryFileName){
 
 string SubstitutionText::decrypt(string text, string dictionaryFileName){
     std::ifstream myFile;
-    string fName = dictionaryFileName + ".csv";
-    myFile.open(fName);
+    myFile.open("exercises/exercise4/source/" + dictionaryFileName);
 
     if(!myFile){
-        cout << "ERROR" << endl;
+        cout << "error opening " << dictionaryFileName << endl;
         exit(1);
     }
     string line;
     for(int i=0; i<text.length(); i++){
         if(text[i] >='a' && text[i] <= 'z') {
             while(std::getline(myFile, line)){
-                if(line[2] == text[i]){
+                if(line.length() >= 3 && line[1] == ',' && line[2] == text[i]){
                    text[i] = line[0]; 
-                   continue;
+                   break;
                 }
             }//while
+            myFile.seekg(0, std::ios::beg); // Move the pointer to the start
         }//for
         // do nothing
     }
@@ -68,14 +68,18 @@ string SubstitutionText::decrypt(string text, string dictionaryFileName){
 }
 
 string SubstitutionText::encrypt() {
-     _isEncrypted = true;
-    _text = encrypt(_text, "dictionary");
+    if(_isEncrypted == false){
+        _text = encrypt(_text, _dictionaryFileName);
+    }
+    _isEncrypted = true;
     return _text;
 }
 
 string SubstitutionText::decrypt() {
-     _isEncrypted = false;
-    _text = decrypt(_text, "dictionary");
+    if(_isEncrypted == true){
+        _text = decrypt(_text, _dictionaryFileName);
+    }
+    _isEncrypted = false;
     return _text;
 
 }

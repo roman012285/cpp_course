@@ -12,11 +12,9 @@ ShiftText::ShiftText(std::string text, int key)
     _text = encrypt(_text, _key); // Encrypt the text during initialization
 }
 
-ShiftText::~ShiftText(){
-    cout << "destructor of ShiftTextClass activated" << endl;
-}
+ShiftText::~ShiftText(){};
 
-std::string encrypt(std::string text, int key) {
+std::string ShiftText::encrypt(std::string text, int key) {
     for (size_t i = 0; i < text.length(); i++) {
         if (text[i] >= 'a' && text[i] <= 'z') {  
             text[i] = (text[i] - 'a' + key) % 26 + 'a';  
@@ -26,7 +24,7 @@ std::string encrypt(std::string text, int key) {
     return text;
 }
 
-std::string decrypt(std::string text, int key) {
+std::string ShiftText::decrypt(std::string text, int key) {
     for (size_t i = 0; i < text.length(); i++) {
         if (text[i] >= 'a' && text[i] <= 'z') {  
             int shifted = text[i] - 'a' - key;  
@@ -41,14 +39,18 @@ std::string decrypt(std::string text, int key) {
 }
 
 std::string ShiftText::encrypt(){
+    if(_isEncrypted == false){
+        _text = encrypt(_text, _key);
+    }
     _isEncrypted = true;
-    _text = encrypt(_text, _key);
     return _text;
 }
 
-std::string ShiftText::encrypt(){
+std::string ShiftText::decrypt(){
+    if(_isEncrypted == true) {
+        _text = decrypt(_text, _key);
+    }
     _isEncrypted = false;
-    _text = decrypt(_text, _key);
     return _text;
 }
 

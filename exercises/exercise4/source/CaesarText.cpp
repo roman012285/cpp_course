@@ -23,13 +23,17 @@ std::string CaesarText::decrypt(std::string text) {
 }
 
 std::string CaesarText::encrypt() {
-    _text = encrypt(_text);
+    if(_isEncrypted == false){
+        _text = encrypt(_text);
+    }
     _isEncrypted = true;
     return _text;
 }
 
 std::string CaesarText::decrypt() {
-    _text = decrypt(_text);
+    if(_isEncrypted == true){
+        _text = decrypt(_text);
+    }
     _isEncrypted = false;
     return _text;
 }

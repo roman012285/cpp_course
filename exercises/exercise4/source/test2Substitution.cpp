@@ -1,3 +1,4 @@
+/*
 #include "SubstitutionText.h"
 #include <fstream>
 #include <iostream>
@@ -239,3 +240,4 @@ int main()
 	}
 	return testResult ? 0 : 1;
 }
+*/

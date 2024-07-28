@@ -5,8 +5,12 @@ using std::string;
 using std::cout;
 using std::endl;
 
+int PlainText::numOfTexts = 0; // initialization of static field
+
  PlainText:: PlainText(string text)
-     :_text(text), _isEncrypted(true){};
+     :_text(text), _isEncrypted(true){ 
+     numOfTexts++;  
+};
 
 
  PlainText::~PlainText(){};
@@ -18,4 +22,3 @@ bool PlainText::isEncrypted() const {
 std::string PlainText::getText() const {
     return this->_text;
 }
-

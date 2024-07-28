@@ -12,6 +12,9 @@ public:
     ~PlainText(); // destructor
     bool isEncrypted() const;
     std::string getText() const;
+
+    // static fields
+    static int numOfTexts;
 };
 
 

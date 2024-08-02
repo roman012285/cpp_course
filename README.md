@@ -28,6 +28,14 @@ That script will generate `build` folder including executable file and object fi
     * Constructors overloading
     * Operator overloading 
 - **Lesson3** - Inheritance, Compositions and Multiple Inheritance
+- **Lesson4** - Polymorphism
+    * Polymorphism
+    * Virtual functions
+    * Function pointers
+    * Override
+    * Pure Virtual functions
+    * Abstract classes
+
 
 
 ## assignments

@@ -19,8 +19,8 @@ public:
 	virtual std::vector<Point> getPoints() const = 0;
 
 	// override functions if need (virtual + pure virtual)
-	virtual double getPerimeter() const override = 0;
-	virtual void move(Point& other) override = 0;
+	//virtual double getPerimeter() const override = 0;
+	//virtual void move(Const Point& other) override = 0;
 
 protected:
 	std::vector<Point> _points;

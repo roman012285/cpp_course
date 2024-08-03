@@ -20,6 +20,6 @@ public:
 	std::vector<Point> getPoints() const override;
 
 	double getPerimeter() const override;
-	void move(Point& other) override;
+	void move(const Point& other) override;
 
 };

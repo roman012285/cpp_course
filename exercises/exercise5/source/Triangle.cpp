@@ -44,10 +44,10 @@ std::vector<Point> Triangle::getPoints() const {
     return _points;
 }
 
-void Triangle::move(Point& other) {
+void Triangle::move(const Point& other) {
     _points[0] += other;
 	_points[1] += other;
-	_points[1] += other;
+	_points[2] += other;
 
 }
 

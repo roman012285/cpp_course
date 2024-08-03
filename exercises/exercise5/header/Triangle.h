@@ -17,5 +17,9 @@ public:
 	double getArea() const override;
 
 	// override functions if need (virtual + pure virtual)
+	std::vector<Point> getPoints() const override;
+
+	double getPerimeter() const override;
+	void move(Point& other) override;
 
 };

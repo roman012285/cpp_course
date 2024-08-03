@@ -1,26 +1,28 @@
 #pragma once
+
 #include "Polygon.h"
 
+namespace myShapes {
+    // Calling it MyRectangle because Rectangle is taken by global namespace.
+    class Rectangle : public Polygon {
+    public:
+        // Constructor
+        // Only the top-left corner is needed along with length and width
+        Rectangle(Point a, double length, double width, std::string type, std::string name);
 
-namespace myShapes
-{
-	// Calling it MyRectangle becuase Rectangle is taken by global namespace.
-	class Rectangle : public Polygon
-	{
-	public:
+        // Destructor
+        ~Rectangle() override;
 
-		// Constructor
-		// There's a need only for the top left corner 
-		Rectangle(Point a, double length, double width, std::string type, std::string name);
+        // Methods
+        void draw(const Canvas& canvas) override;
+        void clearDraw(const Canvas& canvas) override;
+        double getArea() const override;
+        double getPerimeter() const override;
+        void move(const Point& other) override;
+        std::vector<Point> getPoints() const override;
 
-		// Destructor
-		~Rectangle() override;
-
-		// Methods
-		void draw(const Canvas& canvas) override;
-		void clearDraw(const Canvas& canvas) override;
-		double getArea() const override;
-
-
-	};
+    private:
+        double _length;
+        double _width;
+    };
 }

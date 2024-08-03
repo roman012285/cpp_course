@@ -29,6 +29,6 @@ public:
 	// add fields
 private:
 	Point _center;
-	Point _double;
+	double _radius;
 
 };

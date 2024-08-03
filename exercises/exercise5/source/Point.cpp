@@ -31,9 +31,10 @@ double Point::getY() const {
     return this->_y;
 }
 
-double Point::distance(Point& other) const {
+double Point::distance(const Point& other) const {
     double distance;
     distance = std::sqrt((_x-other._x) + (_y-other._y));
 
     return distance;
 }
+

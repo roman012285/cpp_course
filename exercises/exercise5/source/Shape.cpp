@@ -5,9 +5,9 @@ using std::cout;
 using std::endl;
 
 Shape::Shape(std::string name, std::string type)
-:_name(name), _type(type) {};
+:_name(name), _type(type) {}
 
-Shape::~Shape() {};
+Shape::~Shape() {}
 
 std::string Shape::getType() const{
     return _type;

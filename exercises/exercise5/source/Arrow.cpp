@@ -43,7 +43,7 @@ double Arrow::getArea() const{
 	return 0;
 }
 
-void Arrow::move(Point& other) {
+void Arrow::move(const Point& other) {
     _source += other;
     _destination += other;
 }

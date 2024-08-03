@@ -22,7 +22,7 @@ public:
 	// override functions if need (virtual + pure virtual)
 	double getPerimeter() const override;
 	double getArea() const override;
-	void move(Point& other) override;
+	void move(const Point& other) override;
 
 private:
 	Point _source;

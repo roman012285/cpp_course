@@ -37,6 +37,6 @@ double Circle::getArea() const {
 	return PI*_radius*_radius;
 }
 
-void Circle::move(Point& other){
+void Circle::move(const Point& other){
 	_center += other;
 }

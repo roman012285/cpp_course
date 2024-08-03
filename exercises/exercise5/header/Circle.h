@@ -24,7 +24,7 @@ public:
 	void clearDraw(const Canvas& canvas) override;
 	double getPerimeter() const override;
 	double getArea() const override;
-	void move(Point& other) override;
+	void move(const Point& other) override;
 
 	// add fields
 private:

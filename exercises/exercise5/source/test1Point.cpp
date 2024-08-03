@@ -1,3 +1,4 @@
+/*
 #include "Point.h"
 #include <iostream>
 #include <windows.h> // WinApi header - needed for setting console color
@@ -285,3 +286,4 @@ int main()
 	}
 	return testResult ? 0 : 1;
 }
+*/

@@ -18,7 +18,7 @@ namespace myShapes {
         void clearDraw(const Canvas& canvas) override;
         double getArea() const override;
         double getPerimeter() const override;
-        void move(const Point& other) override;
+        void move(Point& other) override;
         std::vector<Point> getPoints() const override;
 
     private:

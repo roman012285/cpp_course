@@ -50,3 +50,10 @@ void Triangle::move(Point& other) {
 	_points[1] += other;
 
 }
+
+double Triangle::getPerimeter() const {
+    double a = _points[0].distance(_points[1]);
+    double b = _points[1].distance(_points[2]);
+    double c = _points[2].distance(_points[0]);
+    return a + b + c;
+}

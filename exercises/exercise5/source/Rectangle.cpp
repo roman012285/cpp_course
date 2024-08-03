@@ -31,7 +31,7 @@ namespace myShapes {
         return 2 * (_length + _width);
     }
 
-    void Rectangle::move(const Point& other) {
+    void Rectangle::move(Point& other) {
         for (auto& point : _points) {
             point += other;
         }

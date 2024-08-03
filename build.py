@@ -58,7 +58,7 @@ def build_directory(exercise_name, main_file, run_executable=False):
 
     # Link all object files into a single executable
     executable = os.path.join(output_dir, 'main.exe')
-    link_command = ['g++', '-o', executable] + obj_files
+    link_command = ['g++', '-o', executable] + obj_files + ['-lgdi32']  # Added -lgdi32 here
     print(f"Linking to create executable {executable}...")
     subprocess.run(link_command, check=True)
 

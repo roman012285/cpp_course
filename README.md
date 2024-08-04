@@ -35,6 +35,7 @@ That script will generate `build` folder including executable file and object fi
     * Override
     * Pure Virtual functions
     * Abstract classes
+- **Lesson5** - Exceptions and Debug
 
 
 

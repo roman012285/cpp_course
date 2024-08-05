@@ -1,3 +1,4 @@
+/*
 #define ERROR_8200  1
 #define N0_ERROR_8200  0
 
@@ -53,3 +54,4 @@ int main(void) {
     std::cout << result << std::endl;
   }
 }
+*/

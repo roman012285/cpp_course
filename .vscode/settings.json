@@ -48,7 +48,8 @@
         "cstdarg": "cpp",
         "sstream": "cpp",
         "cstring": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "ctime": "cpp"
     },
     "cSpell.words": [
         "Succesfully",

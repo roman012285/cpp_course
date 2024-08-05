@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include <string>
 
@@ -28,7 +29,7 @@ int main() {
   int result;
 
   try {
-    result = multiply(4200, 2);
+    result = multiply(4200, 2);  // if exception will be occurred than nothing from that block wont be executed 
     std::cout << result << std::endl;
   } 
   catch (const std::string &e) {
@@ -37,3 +38,4 @@ int main() {
 
   return 0;
 }
+*/

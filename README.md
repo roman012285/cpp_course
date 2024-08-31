@@ -46,5 +46,7 @@ for test run  `./build.py -dir exercise2 -test Tester -run`
 - assignment3 - Design a vector structure.     
 for test run  `./build.py -dir exercise3 -test <test_file> -run`
 - assignment4 - Encryption and decryption. 
-- assignment5 - Draw figures.      
+- assignment5 - Draw figures. 
+- assignment6 - Exceptions and debug. (assignment part2 may have some errors, maybe(not sure) because of the environment itself).  
+
  
